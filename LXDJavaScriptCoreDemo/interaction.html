@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div style="margin-top: 20px">
+            <h2 align="center" style="color:#ff0000">JS与iOS交互</h2>
+            <input type="button" value="点击后切换控制器的背景颜色" onclick="sindrilin.call()">
+        </div>
+        <div style="color:#7BBDE5">
+            <br />
+            <br />
+            账户：
+            <input id="account" type="text">
+            <br />
+            密码：
+            <input id="password" type="password">
+        </div>
+        <div>
+            <input type="button" value="登录" onclick="login()">
+        </div>
+        
+        <script>
+            
+            var login = function()
+            {
+                account = document.getElementById("account")
+                password = document.getElementById("password")
+                var accountInfo = JSON.stringify({"account": account.value, "password": password.value});
+                sindrilin.login(accountInfo);
+            }
+        
+            var alertFromIOS = function(message)
+            {
+                    alert(message)
+            }
+        
+        </script>
+    </body>
+</html>
